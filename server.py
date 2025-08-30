@@ -2,6 +2,11 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+# Route per la home
+@app.route('/')
+def home():
+    return "Backend D&D attivo! Vai avanti con il gioco."
+
 @app.route('/api/action', methods=['POST'])
 def action():
     data = request.json
